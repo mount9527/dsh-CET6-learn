@@ -1,0 +1,84 @@
+{
+  "name": "dsh-cet6",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "大学英语六级训练台（DeepSeek Harness 插件）：核心词（约 2500）与大纲词分组背记、听力（长对话 / 篇章 / 讲座三段 25 题）、选词填空 / 长篇阅读 / 仔细阅读、片段翻译、作文书写、生词本。内置原创示例题库（345 词 + 1 套模拟卷，装完即用，听力用系统语音朗读），真题与录音由使用者自备，包内不含任何真题内容。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cet6",
+    "english",
+    "vocabulary",
+    "listening"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/mount9527/dsh-CET6-learn",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mount9527/dsh-CET6-learn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mount9527/dsh-CET6-learn/issues"
+  },
+  "author": "mount9527",
+  "main": "./index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "app",
+    "starter",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "build/build.mjs",
+    "build/validate-data.mjs",
+    "build/check-starter.mjs",
+    "build/serve-plugin.mjs",
+    "build/test-client.mjs",
+    "build/e2e.mjs",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build:data": "node build/build.mjs",
+    "check:data": "node build/validate-data.mjs",
+    "check:starter": "node build/check-starter.mjs",
+    "preview:plugin": "node build/serve-plugin.mjs 8788",
+    "test:client": "node build/test-client.mjs",
+    "test:e2e": "node build/e2e.mjs",
+    "test": "node build/test-client.mjs && node build/check-starter.mjs && node build/validate-data.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    },
+    "manifestVersion": 1
+  }
+}

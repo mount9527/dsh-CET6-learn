@@ -1,0 +1,21 @@
+# 题库与录音：由使用者用自己的资料构建，绝不入库
+data/
+data-pack/
+.cache/
+*.pdf
+*.csv
+*.aac
+*.m4a
+*.mp3
+audio-tracks.json
+
+# 依赖与产物
+node_modules/
+*.tgz
+package-lock.json
+.DS_Store
+Thumbs.db
+# 凭据与本地配置，绝不入库
+.npmrc
+.env
+.env.*

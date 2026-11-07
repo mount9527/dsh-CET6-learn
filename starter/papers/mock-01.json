@@ -1,0 +1,724 @@
+{
+  "id": "mock-01",
+  "year": 2026,
+  "month": 12,
+  "set": 1,
+  "title": "示例模拟卷（原创）",
+  "period": "示例模拟卷",
+  "sourceFile": "mock-01",
+  "listenFrom": null,
+  "synth": true,
+  "listening": {
+    "synth": true,
+    "track": "",
+    "audio": "",
+    "verified": true,
+    "passages": [
+      {
+        "key": "A",
+        "section": "A",
+        "sectionLabel": "长对话",
+        "title": "Section A",
+        "from": 1,
+        "to": 8,
+        "start": null,
+        "end": null,
+        "text": "Conversation One\n\nW: Excuse me, is this the desk for community projects? I read on the noticeboard that the library helps students run small events.\nM: That's right. We lend the room, and sometimes the equipment. What did you have in mind?\nW: A repair café. People bring broken things, and volunteers try to fix them. My grandfather ran one in Lisbon for years, and I thought our hall would be perfect for it.\nM: I like it. You should know that we already have a tool collection for exactly this kind of thing. Drills, soldering irons, multimeters. They can be borrowed like books, though the loan period is shorter.\nW: That solves half my problem. The other half is safety. Some of the appliances people bring in still hold a charge, and I don't want a first-year student with a screwdriver anywhere near a microwave.\nM: Sensible. We can put a red tag on anything with a capacitor and let only the two of you touch it. Also, the university's insurance covers volunteers, but only if they have had a short induction.\nW: How long does the induction take?\nM: About ninety minutes. I can run one next Thursday.\nW: Then maybe we should start small. One hall, one Saturday, ten objects, and see whether anyone comes.\nM: That's exactly what I would do. Keep the first one quiet, learn what breaks most often, and only then ask for a bigger space.\nW: I'll write a one-page plan and bring it on Thursday.\nM: Good. And bring the plan on paper. The printer on this floor has been broken since March, which is a small reminder of why your idea makes sense.\n\nConversation Two\n\nM: Professor Hale, your team published a study on the four-day week. What surprised you most?\nW: The output. We expected a small drop and prepared an argument about long-term gains. Instead, output stayed flat for six months, and the cost of running the office fell by about nine per cent.\nM: So the obvious conclusion is that everyone should switch.\nW: No, and this is where most reports go wrong. The first eight weeks were chaotic. Meetings multiplied, because people had less time and wanted to be sure nothing was missed. Two teams nearly missed a deadline.\nM: How did you fix that?\nW: We cut meetings to twenty-five minutes by default, and required an agenda before booking a room. That sounds trivial, but it removed about a third of the calendar. The saved hours went back into work that needed concentration.\nM: Did anyone game the system?\nW: A few people quietly worked on Fridays, which rather defeats the purpose. We had to measure tasks completed rather than hours logged, and that took us a while to get right.\nM: What would you say to a company that wants to copy the model?\nW: Do not copy the calendar. Copy the habit of asking what the extra day is for. If the answer is 'more of the same, faster', the pilot will fail and everyone will blame the idea rather than the design.",
+        "questions": [
+          {
+            "n": 1,
+            "stem": "What is the woman's main purpose in visiting the library?",
+            "options": {
+              "A": "To borrow a room for a reading group.",
+              "B": "To ask about running a campus event.",
+              "C": "To complain about a broken printer.",
+              "D": "To apply for a part-time job."
+            },
+            "answer": "B"
+          },
+          {
+            "n": 2,
+            "stem": "What does the man say about the library's tool collection?",
+            "options": {
+              "A": "It can be borrowed like books.",
+              "B": "It is only for staff use.",
+              "C": "It was donated by a local firm.",
+              "D": "It is kept in the basement."
+            },
+            "answer": "A"
+          },
+          {
+            "n": 3,
+            "stem": "Why is the woman concerned about safety?",
+            "options": {
+              "A": "The hall has no fire exit.",
+              "B": "Volunteers have never been trained.",
+              "C": "Some tools are missing parts.",
+              "D": "Some appliances still hold a charge."
+            },
+            "answer": "D"
+          },
+          {
+            "n": 4,
+            "stem": "What does the man suggest she do first?",
+            "options": {
+              "A": "Ask the university for funding.",
+              "B": "Advertise the event widely.",
+              "C": "Run a small trial in one hall.",
+              "D": "Find a professional electrician."
+            },
+            "answer": "C"
+          },
+          {
+            "n": 5,
+            "stem": "What did the study find about output?",
+            "options": {
+              "A": "It rose sharply in the first month.",
+              "B": "It stayed flat for six months.",
+              "C": "It fell by about nine per cent.",
+              "D": "It could not be measured."
+            },
+            "answer": "B"
+          },
+          {
+            "n": 6,
+            "stem": "What problem appeared at the beginning of the trial?",
+            "options": {
+              "A": "Staff refused to take part.",
+              "B": "Customers complained about delays.",
+              "C": "The number of meetings increased.",
+              "D": "Two offices closed down."
+            },
+            "answer": "C"
+          },
+          {
+            "n": 7,
+            "stem": "How did the teams deal with the problem?",
+            "options": {
+              "A": "By shortening meetings and requiring agendas.",
+              "B": "By hiring more managers.",
+              "C": "By moving work to the weekend.",
+              "D": "By cancelling all group discussions."
+            },
+            "answer": "A"
+          },
+          {
+            "n": 8,
+            "stem": "What does the woman warn against?",
+            "options": {
+              "A": "Measuring hours instead of tasks.",
+              "B": "Giving staff a free day.",
+              "C": "Publishing the results too early.",
+              "D": "Copying the model without changing habits."
+            },
+            "answer": "D"
+          }
+        ]
+      },
+      {
+        "key": "B",
+        "section": "B",
+        "sectionLabel": "篇章",
+        "title": "Section B",
+        "from": 9,
+        "to": 15,
+        "start": null,
+        "end": null,
+        "text": "Passage One\n\nWalk down a street with old trees and then turn into a street with none, and you can feel the difference on a summer afternoon. The thermometer can too. Researchers call the effect an urban heat island: paved surfaces absorb sunlight during the day and release it slowly at night, so a district with little shade can be several degrees warmer than a park a few streets away.\n\nA study in three cities measured this more carefully than earlier work had done. Teams placed sensors along streets that differed in one respect only: some had mature tree cover, others had grass strips, and others had neither. The result was not what the researchers expected. Grass cooled the air immediately above it, but the effect disappeared within a metre of the lawn's edge. Trees did something different. Their canopy blocked direct sunlight before it reached the pavement, and their leaves released water vapour into the air, so the cooling extended along the whole street.\n\nThe practical lesson is about placement rather than quantity. A park at the edge of a district is pleasant, but few people walk through it on the way to the shops. A line of trees along a pavement that people actually use changes the experience of a journey every day. City planners, the authors argue, should stop counting trees and start counting shaded metres where pedestrians walk. That is a smaller number, and a more useful one.",
+        "questions": [
+          {
+            "n": 9,
+            "stem": "What does the speaker say about urban heat islands?",
+            "options": {
+              "A": "They affect rural areas most.",
+              "B": "They are worst where shade is scarce.",
+              "C": "They disappear at night.",
+              "D": "They are caused mainly by traffic."
+            },
+            "answer": "B"
+          },
+          {
+            "n": 10,
+            "stem": "What did the study in three cities find?",
+            "options": {
+              "A": "Grass cooled streets more than trees.",
+              "B": "Tree cover had no measurable effect.",
+              "C": "Shade lowered street temperature more than grass.",
+              "D": "Temperature depended only on building height."
+            },
+            "answer": "C"
+          },
+          {
+            "n": 11,
+            "stem": "What does the speaker recommend to city planners?",
+            "options": {
+              "A": "Plant trees where people actually walk.",
+              "B": "Build taller buildings for shade.",
+              "C": "Replace pavements with lawns.",
+              "D": "Focus on parks at the city edge."
+            },
+            "answer": "A"
+          },
+          {
+            "n": 12,
+            "stem": "What is a common belief about deadlines?",
+            "options": {
+              "A": "They suit creative work better than routine work.",
+              "B": "They should always be set by the team.",
+              "C": "They matter less than office design.",
+              "D": "They always sharpen focus."
+            },
+            "answer": "D"
+          },
+          {
+            "n": 13,
+            "stem": "What did the researchers observe among designers?",
+            "options": {
+              "A": "Ideas produced early were more original.",
+              "B": "Ideas improved as the deadline approached.",
+              "C": "Most designers ignored the deadline.",
+              "D": "Group work produced fewer ideas."
+            },
+            "answer": "A"
+          },
+          {
+            "n": 14,
+            "stem": "Why might work produced late look safer?",
+            "options": {
+              "A": "It is checked by more people.",
+              "B": "It uses better tools.",
+              "C": "It repeats familiar patterns.",
+              "D": "It is aimed at a smaller market."
+            },
+            "answer": "C"
+          },
+          {
+            "n": 15,
+            "stem": "What is the speaker's advice to creative teams?",
+            "options": {
+              "A": "Start early and leave room to revise.",
+              "B": "Remove all deadlines.",
+              "C": "Work only in the morning.",
+              "D": "Hire more experienced designers."
+            },
+            "answer": "A"
+          }
+        ]
+      },
+      {
+        "key": "C",
+        "section": "C",
+        "sectionLabel": "讲座",
+        "title": "Section C",
+        "from": 16,
+        "to": 25,
+        "start": null,
+        "end": null,
+        "text": "Recording One\n\nWe have better maps of the surface of Mars than of our own sea floor. That sounds like an exaggeration, and it is only a mild one. Roughly three quarters of the ocean has never been measured at a resolution fine enough to see a feature the size of a football field. We know the general shape of the deep ocean from satellites, which infer the bumps and hollows of the sea floor from tiny variations in the height of the water surface. But inference is not measurement.\n\nTo measure, ships send sound downwards and time its return. The technique has been reliable for half a century, and it is painfully slow: a survey vessel can cover a few thousand square kilometres in a month, and the ocean is three hundred and sixty million square kilometres. New robotic craft are beginning to help, sailing in small fleets and mapping as they go, but the water is deep and the weather is not always kind.\n\nThe effort is worth it for reasons that are not obvious from a map on a screen. Underwater landslides, which can generate waves far from their source, leave shapes on the sea floor that we can only recognise if we have seen them before. Pipelines and cables are routed across terrain that nobody has surveyed in detail. And every expedition that returns with high-resolution images brings back evidence of animals living in places where we assumed nothing could live. The map is not the point; the map is how we find the questions.\n\nRecording Two\n\nIf you have ever driven to a familiar place with a navigation app and then found, a week later, that you could not remember the route, you have experienced what psychologists call cognitive offloading. The phone remembers, so you do not, and the part of your brain that builds a mental map gets less practice.\n\nAn experiment at a university in London tested this directly. Two groups were taken on the same route through an unfamiliar part of the city: one walked with a phone giving turn-by-turn directions, the other with a paper map and no prompts. Afterwards both groups were asked to draw the route from memory. The phone group produced sketches that were noticeably thinner: fewer side streets, fewer landmarks, less sense of how the parts fitted together.\n\nThe finding is not an argument for throwing away your phone. Navigation apps are genuinely useful, and nobody should navigate a strange city at night by guesswork. What the researchers suggest is a small habit: after using the app, try to recall the route once, out loud or on paper. The act of reconstructing seems to be what builds the memory, and it costs a minute. The same logic applies to other tools. A calculator does not damage arithmetic, but relying on it for every small sum means the estimate you need in a meeting is no longer there.\n\nRecording Three\n\nCitizen science is a plain name for a simple idea: the public collects data, and professional researchers use it. A bird count, a survey of insects on a windowsill, a phone app that records the first leaves of spring. Individually these records are trivial. Together they do something a research team could never do alone, because they cover a continent at a density no grant could pay for.\n\nThe weakness is equally obvious. A volunteer may misidentify a species, record the same tree twice, or skip a rainy weekend and shift the pattern of the data without meaning to. Projects have learned to manage this in unglamorous ways: short training sessions, forms that ask for a photograph as well as a name, and simple protocols that leave little room for interpretation. Where those measures are in place, comparisons with professional surveys tend to agree remarkably well.\n\nThere is a benefit that the organisers did not plan for. Volunteers report, again and again, that they notice more in their own neighbourhood after a season of recording: which trees flower first, where the water pools after rain, which birds are absent this year. That attention is difficult to measure and easy to dismiss, but it may matter more than the data. A city that contains ten thousand people who can name the trees on their street is a different city from one that does not.",
+        "questions": [
+          {
+            "n": 16,
+            "stem": "What does the speaker say about the sea floor?",
+            "options": {
+              "A": "It has been mapped in detail.",
+              "B": "Most of it is still unmapped.",
+              "C": "It changes shape very quickly.",
+              "D": "It is flatter than the land."
+            },
+            "answer": "B"
+          },
+          {
+            "n": 17,
+            "stem": "What is used to measure the depth of the ocean?",
+            "options": {
+              "A": "Satellite photographs.",
+              "B": "Underwater cameras only.",
+              "C": "Sound waves.",
+              "D": "Samples of rock."
+            },
+            "answer": "C"
+          },
+          {
+            "n": 18,
+            "stem": "Why does the speaker think mapping matters?",
+            "options": {
+              "A": "It makes shipping cheaper.",
+              "B": "It predicts earthquakes.",
+              "C": "It proves the ocean is warming.",
+              "D": "It may reveal unknown species."
+            },
+            "answer": "D"
+          },
+          {
+            "n": 19,
+            "stem": "What happens when people rely on navigation apps?",
+            "options": {
+              "A": "Memory for routes declines.",
+              "B": "They drive more carefully.",
+              "C": "They explore more side streets.",
+              "D": "They lose interest in maps."
+            },
+            "answer": "A"
+          },
+          {
+            "n": 20,
+            "stem": "What did the experiment with two groups show?",
+            "options": {
+              "A": "Both groups drew equally good maps.",
+              "B": "Neither group could find the way back.",
+              "C": "Those who used GPS drew less detailed maps.",
+              "D": "Those without GPS walked faster."
+            },
+            "answer": "C"
+          },
+          {
+            "n": 21,
+            "stem": "What does the speaker recommend?",
+            "options": {
+              "A": "Abandon navigation apps completely.",
+              "B": "Use them, but try to recall the route afterwards.",
+              "C": "Use paper maps only.",
+              "D": "Turn off the screen while driving."
+            },
+            "answer": "B"
+          },
+          {
+            "n": 22,
+            "stem": "What is the main strength of citizen science?",
+            "options": {
+              "A": "It costs nothing to run.",
+              "B": "Volunteers collect observations at a scale no team could.",
+              "C": "It replaces professional researchers.",
+              "D": "It works only in cities."
+            },
+            "answer": "B"
+          },
+          {
+            "n": 23,
+            "stem": "What is the main weakness of citizen science?",
+            "options": {
+              "A": "Volunteers lose interest quickly.",
+              "B": "It cannot be used outdoors.",
+              "C": "Results are never published.",
+              "D": "Data quality can vary."
+            },
+            "answer": "D"
+          },
+          {
+            "n": 24,
+            "stem": "How do projects improve the reliability of data?",
+            "options": {
+              "A": "Through training and simple protocols.",
+              "B": "By paying volunteers.",
+              "C": "By reducing the number of records.",
+              "D": "By using only one location."
+            },
+            "answer": "A"
+          },
+          {
+            "n": 25,
+            "stem": "What does the speaker say is an unexpected benefit?",
+            "options": {
+              "A": "Local schools receive new equipment.",
+              "B": "Scientists save money on travel.",
+              "C": "Volunteers notice more in their own neighbourhood.",
+              "D": "Governments collect more tax."
+            },
+            "answer": "C"
+          }
+        ]
+      }
+    ]
+  },
+  "cloze": {
+    "passage": "Every Saturday morning, in a church hall in Rotterdam, a dozen volunteers open their toolboxes and wait. People arrive carrying lamps that no longer light, radios that hiss, and bicycles with broken brakes. Nothing here is sold. The {{26}} is simple: things last longer than their owners' patience, and a repair often costs less than a {{27}}. The movement began in Amsterdam in 2009, when a journalist named Martine Postma grew tired of watching useful objects being {{28}}. She organised the first Repair Café in a community centre and expected perhaps twenty visitors; more than a hundred came. Today there are more than two thousand such workshops worldwide, run by volunteers who {{29}} their skills in electronics, sewing and carpentry. The benefits are not only {{30}}. Repairs keep materials out of landfill, and every repaired kettle saves the energy and water that a new one would {{31}}. But volunteers say the conversations matter as much as the screws. Older visitors bring knowledge that younger ones lack, and a stranger who arrives with a broken fan may leave with a friend. Critics {{32}} that repair cafés cannot compete with cheap manufacturing. A new toaster costs less than an hour of a technician's time, and many appliances are glued shut {{33}}. Volunteers {{34}} that this is precisely the point: the workshops are as much a protest against disposable design as a service. Some manufacturers have begun to notice, and a few now publish repair manuals that were {{35}} treated as trade secrets.",
+    "bank": [
+      {
+        "letter": "A",
+        "word": "argue"
+      },
+      {
+        "letter": "B",
+        "word": "bargain"
+      },
+      {
+        "letter": "C",
+        "word": "consequently"
+      },
+      {
+        "letter": "D",
+        "word": "deliberately"
+      },
+      {
+        "letter": "E",
+        "word": "discarded"
+      },
+      {
+        "letter": "F",
+        "word": "durable"
+      },
+      {
+        "letter": "G",
+        "word": "financial"
+      },
+      {
+        "letter": "H",
+        "word": "insist"
+      },
+      {
+        "letter": "I",
+        "word": "previously"
+      },
+      {
+        "letter": "J",
+        "word": "principle"
+      },
+      {
+        "letter": "K",
+        "word": "protest"
+      },
+      {
+        "letter": "L",
+        "word": "replacement"
+      },
+      {
+        "letter": "M",
+        "word": "require"
+      },
+      {
+        "letter": "N",
+        "word": "share"
+      },
+      {
+        "letter": "O",
+        "word": "spare"
+      }
+    ]
+  },
+  "matching": {
+    "title": "The slow return of the night train",
+    "paragraphs": [
+      {
+        "label": "A",
+        "text": "For thirty years the night train looked like a relic. Cheap flights turned a twelve-hour journey into a two-hour one, and Europe's sleeper carriages were quietly taken out of service. Then, almost without warning, they came back. New routes now link Vienna to Paris, Stockholm to Berlin, and small towns that had lost their evening connection altogether."
+      },
+      {
+        "label": "B",
+        "text": "The first reason is cost. A berth on a sleeper is often cheaper than a flight plus a hotel night, and it replaces both. For a student travelling between two capitals, the arithmetic is simple: leave after dinner, arrive for breakfast, spend nothing on accommodation."
+      },
+      {
+        "label": "C",
+        "text": "The second is climate policy. Several governments have decided that short-haul flights should not be the default for journeys that can be made overnight by rail. In France, domestic flights were restricted where a train connection under two and a half hours exists, a rule that has been copied, in weaker form, elsewhere."
+      },
+      {
+        "label": "D",
+        "text": "Yet the economics remain awkward. A sleeper carriage carries far fewer passengers than a seated one, and each berth needs cleaning, linen and staff. Operators admit that night trains rarely make money on their own; they are kept running because governments treat them as public infrastructure rather than as a business."
+      },
+      {
+        "label": "E",
+        "text": "Rolling stock is the hardest problem. The carriages are decades old, and the factories that once built them have closed or moved. Ordering new sleeper trains means waiting years for delivery, and several operators have had to rent whatever they could find, sometimes from another country."
+      },
+      {
+        "label": "F",
+        "text": "Coordination across borders is harder still. A single journey may cross four countries, each with its own signalling rules, safety certificates and track charges. A train that is approved in one country may need modifications before it can enter the next, and the paperwork can take longer than the journey."
+      },
+      {
+        "label": "G",
+        "text": "Passengers, however, seem less interested in the technical obstacles than in the experience. Travel writers have rediscovered the appeal of a compartment, a window and a slow breakfast. Social media has helped: photographs of a bed made up under a reading lamp travel faster than any timetable."
+      },
+      {
+        "label": "H",
+        "text": "There is also a practical advantage that airlines cannot match. A night train deposits passengers in the centre of a city, at an hour when the metro is running and the streets are awake. The airport, by contrast, sits at the edge, and the taxi ride into town can cost more than the flight."
+      },
+      {
+        "label": "I",
+        "text": "Some operators are experimenting with a middle path. Instead of a full sleeper, they offer a reclining seat in a quiet carriage, priced closer to a bus ticket. The compromise is uncomfortable for tall passengers, but it fills trains that would otherwise run half empty."
+      },
+      {
+        "label": "J",
+        "text": "Not everyone is convinced the revival will last. When fuel prices fell after the pandemic, several new routes were cut within a year. The lesson, according to one operator, is that enthusiasm in the press does not pay for diesel, and that a route needs a steady base of regular travellers, not just curious tourists."
+      },
+      {
+        "label": "K",
+        "text": "Business travellers remain the hardest group to win. Many companies still reimburse flights more readily than overnight rail, and a manager who arrives after a night in a berth may not be at their best for a morning meeting. Some firms have begun to change their travel policies, but slowly."
+      },
+      {
+        "label": "L",
+        "text": "For the towns along the route, the effect is easier to see. A station that was dark at ten in the evening now has lights, a coffee machine and a few passengers waiting. It is a modest revival, but it changes how connected a place feels, and how easily a young person can leave, or come back."
+      }
+    ],
+    "statements": [
+      {
+        "n": 36,
+        "text": "Night trains are often kept running for public rather than commercial reasons.",
+        "answer": "D"
+      },
+      {
+        "n": 37,
+        "text": "A shortage of suitable carriages has forced operators to borrow from abroad.",
+        "answer": "E"
+      },
+      {
+        "n": 38,
+        "text": "The revival has been encouraged by images shared online.",
+        "answer": "G"
+      },
+      {
+        "n": 39,
+        "text": "A trip by sleeper can replace both a flight and a night in a hotel.",
+        "answer": "B"
+      },
+      {
+        "n": 40,
+        "text": "Some new services were withdrawn when fuel became cheaper.",
+        "answer": "J"
+      },
+      {
+        "n": 41,
+        "text": "Crossing several countries creates administrative delays.",
+        "answer": "F"
+      },
+      {
+        "n": 42,
+        "text": "Arriving in the city centre saves passengers money on onward transport.",
+        "answer": "H"
+      },
+      {
+        "n": 43,
+        "text": "Some services now offer a cheaper but less comfortable option.",
+        "answer": "I"
+      },
+      {
+        "n": 44,
+        "text": "Companies have been slow to change how they pay for staff travel.",
+        "answer": "K"
+      },
+      {
+        "n": 45,
+        "text": "Small stations have become livelier as a result of the new routes.",
+        "answer": "L"
+      }
+    ]
+  },
+  "reading": [
+    {
+      "title": "Passage One",
+      "paragraphs": [
+        "In a warehouse outside Rotterdam, a screen on the wall shows every picker as a coloured dot. When a dot stops moving for more than ninety seconds, a supervisor receives an alert. The system was introduced to reduce idle time. Within a year it had cut the average walk between shelves by eleven per cent, and the company's managers describe it as the most useful investment they have made.",
+        "The workers describe something else. Because the software assigns tasks continuously, the pace is set by an algorithm that never tires, never negotiates, and never explains. One picker said she had stopped taking the stairs two at a time not because she was tired but because the system had learned to expect it, and adjusted the next task accordingly.",
+        "This is the quiet difference between old-fashioned supervision and algorithmic management. A human manager sees a person; a system sees a rate. The distinction matters because the data is incomplete. The software records how long a task took, but not why: a missing item, a damaged box, a question from a new colleague. Those minutes appear as inefficiency, and the worker learns to avoid them.",
+        "Some companies have started to build in what they call 'slack' - deliberate gaps in the schedule that absorb the unexpected. In practice this means a target that is set slightly below capacity, so that a slow morning does not become a formal warning. Early evidence suggests that turnover falls, though the effect is difficult to separate from wider changes in pay.",
+        "The deeper issue is not measurement but consent. Workers who understand how a score is calculated can argue with it. Workers who are simply told their number was too high cannot. A few European firms now publish the logic of their scheduling software to employee representatives, and the negotiations that follow have produced rules that no engineer would have written alone.",
+        "None of this makes the technology useless. It makes it political. A warehouse is not a machine with people attached; it is a place where people decide, every hour, how much of themselves to give. Any system that measures the work without listening to the argument about it will eventually be gamed, quietly, by the people it was designed to help."
+      ],
+      "questions": [
+        {
+          "n": 46,
+          "stem": "What was the original purpose of the warehouse system?",
+          "options": {
+            "A": "To reduce the time workers spend idle.",
+            "B": "To monitor the quality of packing.",
+            "C": "To replace supervisors entirely.",
+            "D": "To track the movement of goods."
+          },
+          "answer": "A"
+        },
+        {
+          "n": 47,
+          "stem": "What does the picker's remark suggest?",
+          "options": {
+            "A": "She enjoys the physical exercise.",
+            "B": "She has adapted her behaviour to the system's expectations.",
+            "C": "She no longer understands her tasks.",
+            "D": "She is often late for work."
+          },
+          "answer": "B"
+        },
+        {
+          "n": 48,
+          "stem": "Why is the data collected by the software incomplete?",
+          "options": {
+            "A": "It is stored for too short a time.",
+            "B": "It is only collected at night.",
+            "C": "It cannot record the reasons for a delay.",
+            "D": "It ignores the number of items picked."
+          },
+          "answer": "C"
+        },
+        {
+          "n": 49,
+          "stem": "What is meant by 'slack' in the fourth paragraph?",
+          "options": {
+            "A": "Extra staff hired for busy periods.",
+            "B": "A target set slightly below capacity.",
+            "C": "A break that workers must request.",
+            "D": "A penalty for slow work."
+          },
+          "answer": "B"
+        },
+        {
+          "n": 50,
+          "stem": "What does the author see as the deeper issue?",
+          "options": {
+            "A": "Whether workers agree to how they are measured.",
+            "B": "Whether the technology is accurate.",
+            "C": "Whether the company can afford the software.",
+            "D": "Whether managers understand the data."
+          },
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "title": "Passage Two",
+      "paragraphs": [
+        "The story of the lone genius is one of the most durable myths in science. We remember Newton and the apple, Darwin and the finches, Einstein and the clock tower in Bern. We rarely remember the people who checked the arithmetic, built the instruments, or argued for years with the person whose name ended up on the paper.",
+        "Historians of science have been chipping away at the myth for decades. They point out that Newton's letters were read, corrected and sometimes contradicted by a network of correspondents that included Hooke, Halley and Flamsteed. Einstein's early papers were discussed in a reading group in Bern, the Olympia Academy, whose other members were far from passive listeners.",
+        "What has changed recently is the scale of the evidence. Large databases of publications now allow researchers to measure collaboration directly. One analysis of millions of papers found that the most cited work is increasingly produced by teams rather than individuals, and that the shift is visible across nearly every field, including mathematics, which was long considered a solitary pursuit.",
+        "This does not mean that teams are always better. Studies of brainstorming groups repeatedly find that individuals working alone generate more original ideas than groups that meet to produce them. The advantage of teams appears later, when ideas must be tested, refined and defended. A group is good at killing a bad idea; a single person is good at having an odd one.",
+        "The practical implication is that institutions matter more than we usually admit. A university that rewards only first authors will discourage the quiet work of checking a colleague's data. A laboratory without a shared tea room will produce fewer accidental conversations, and those conversations are where a surprising number of projects begin.",
+        "The myth survives because it is useful. It gives students a hero to admire and administrators a name to put on a building. But it also teaches the wrong lesson about how knowledge is made. If progress depends on a rare individual, then the rest of us can only wait. If it depends on a well-built network, then the network can be designed, and that is a far more hopeful idea."
+      ],
+      "questions": [
+        {
+          "n": 51,
+          "stem": "What does the author say we tend to forget?",
+          "options": {
+            "A": "The contribution of those who supported famous scientists.",
+            "B": "The dates of major discoveries.",
+            "C": "The mistakes made by famous scientists.",
+            "D": "The instruments used in early experiments."
+          },
+          "answer": "A"
+        },
+        {
+          "n": 52,
+          "stem": "What do historians of science point out about Newton?",
+          "options": {
+            "A": "He worked entirely alone.",
+            "B": "He refused to answer letters.",
+            "C": "His work was shaped by correspondence with others.",
+            "D": "He published very little in his lifetime."
+          },
+          "answer": "C"
+        },
+        {
+          "n": 53,
+          "stem": "What has made collaboration easier to measure?",
+          "options": {
+            "A": "Interviews with retired scientists.",
+            "B": "Large databases of publications.",
+            "C": "New rules on authorship.",
+            "D": "The growth of mathematics."
+          },
+          "answer": "B"
+        },
+        {
+          "n": 54,
+          "stem": "What do studies of brainstorming groups suggest?",
+          "options": {
+            "A": "Groups always produce better ideas.",
+            "B": "Individuals produce more original ideas alone.",
+            "C": "Groups should never meet.",
+            "D": "Individuals cannot judge their own ideas."
+          },
+          "answer": "B"
+        },
+        {
+          "n": 55,
+          "stem": "Why does the author think the myth survives?",
+          "options": {
+            "A": "It is supported by strong evidence.",
+            "B": "It makes institutions easier to run.",
+            "C": "It gives people a name to admire and a simple story to tell.",
+            "D": "It encourages students to work in teams."
+          },
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "translation": {
+    "cn": "近年来，许多中国城市在河边和废弃铁路旁修建了步行绿道。绿道把公园、居民区和商业街连在一起，人们可以骑车或步行上下班，也可以在周末带着孩子散步。设计者特意保留了老树和旧厂房，让新的路径带上一点城市的记忆。绿道建成后，沿线的咖啡馆和小店渐渐多了起来，一些原本安静的街区也热闹了。不过，也有人担心游客过多会影响居民生活，因此如何在开放与安静之间取得平衡，成了管理者需要长期考虑的问题。"
+  },
+  "writing": {
+    "prompt": "Suppose your university is collecting students' views on how to make group projects more effective. You are to write an essay on one or two measures the university should take, and explain why they would help. You should write at least 150 words but no more than 200 words."
+  },
+  "answers": {
+    "listening": {
+      "1": "B",
+      "2": "A",
+      "3": "D",
+      "4": "C",
+      "5": "B",
+      "6": "C",
+      "7": "A",
+      "8": "D",
+      "9": "B",
+      "10": "C",
+      "11": "A",
+      "12": "D",
+      "13": "A",
+      "14": "C",
+      "15": "A",
+      "16": "B",
+      "17": "C",
+      "18": "D",
+      "19": "A",
+      "20": "C",
+      "21": "B",
+      "22": "B",
+      "23": "D",
+      "24": "A",
+      "25": "C"
+    },
+    "cloze": {
+      "26": "J",
+      "27": "L",
+      "28": "E",
+      "29": "N",
+      "30": "G",
+      "31": "M",
+      "32": "A",
+      "33": "D",
+      "34": "H",
+      "35": "I"
+    },
+    "clozeWords": {
+      "26": "principle",
+      "27": "replacement",
+      "28": "discarded",
+      "29": "share",
+      "30": "financial",
+      "31": "require",
+      "32": "argue",
+      "33": "deliberately",
+      "34": "insist",
+      "35": "previously"
+    },
+    "matching": {
+      "36": "D",
+      "37": "E",
+      "38": "G",
+      "39": "B",
+      "40": "J",
+      "41": "F",
+      "42": "H",
+      "43": "I",
+      "44": "K",
+      "45": "L"
+    },
+    "reading": {
+      "46": "A",
+      "47": "B",
+      "48": "C",
+      "49": "B",
+      "50": "A",
+      "51": "A",
+      "52": "C",
+      "53": "B",
+      "54": "B",
+      "55": "C"
+    }
+  }
+}
