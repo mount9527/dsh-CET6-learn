@@ -108,7 +108,7 @@ CET6_DATA  →  ~/.dsh/dsh-cet6/data  →  插件内 data/（仅开发）  →  
 
 资料放哪都行；最省事的是放进本项目的 `data-pack/`——按 `01`–`05` 分好类之后，
 `npm run check:pack` 先体检、`npm run build:data` 直接构建，都不用再写 `--src`。
-目录长什么样、以后怎么加新卷 / 新录音 / 新词表，见 [`data-pack/README.md`](data-pack/README.md)。
+目录长什么样、以后怎么加新卷 / 新录音 / 新词表，见 [`data-pack/README.md`](https://github.com/mount9527/dsh-CET6-learn/blob/main/data-pack/README.md)。
 
 下面是把这三步写下来的版本。
 
@@ -360,8 +360,8 @@ npm pack --dry-run            # 包内文件清单：没有 data/、没有 data-
 - **私有仓**：把这个仓库设为 Private，或另开一个 `mount9527/dsh-cet6-data`，克隆到 `data-pack/` 后构建。
   私有仓不受公开分发限制，但要记得它一旦转公开，资料就跟着公开了。
 
-分类、命名规则、以后怎么加新卷 / 新录音 / 新词表，见 [`data-pack/README.md`](data-pack/README.md)
-与 [`docs/data-pack.md`](docs/data-pack.md)。
+分类、命名规则、以后怎么加新卷 / 新录音 / 新词表，见 [`data-pack/README.md`](https://github.com/mount9527/dsh-CET6-learn/blob/main/data-pack/README.md)
+与 [`docs/data-pack.md`](https://github.com/mount9527/dsh-CET6-learn/blob/main/docs/data-pack.md)。
 
 ## 发布
 
@@ -369,7 +369,7 @@ npm pack --dry-run            # 包内文件清单：没有 data/、没有 data-
 
 - **GitHub**：代码仓公开，`main` 分支。推代码前先跑一遍
   `npm run test:client && npm run check:starter`（不依赖题库，CI 里也只跑这两步）。
-- **npm**：`npm publish`（或打 `v*` tag 走 [.github/workflows/release.yml](.github/workflows/release.yml)，
+- **npm**：`npm publish`（或打 `v*` tag 走 [.github/workflows/release.yml](https://github.com/mount9527/dsh-CET6-learn/blob/main/.github/workflows/release.yml)，
   仓库 Secrets 里放 `NPM_TOKEN`）。包内容由 `package.json` 的 `files` 白名单决定：只有代码、
   内置示例（`starter/`）与文档，`data/`、`data-pack/`、`.cache/` 都不会进包。
   发版前用 `npm pack --dry-run` 自己看一眼清单。
