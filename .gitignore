@@ -1,13 +1,31 @@
-# 题库与录音：由使用者用自己的资料构建，绝不入库
+# ── 题库与录音：内容绝不入库，只保留 data-pack/ 的分类骨架 ──
+# 真题、听力原文、录音、答案、词表的著作权归原权利人；公开仓库只放代码、文档与
+# 原创示例（starter/）。data-pack/ 里除 README / pack.json / .gitkeep 外一律忽略。
 data/
-data-pack/
+data-pack/**
+!data-pack/README.md
+!data-pack/pack.json
+!data-pack/01 真题试卷/
+!data-pack/01 真题试卷/.gitkeep
+!data-pack/02 答案/
+!data-pack/02 答案/.gitkeep
+!data-pack/03 听力原文/
+!data-pack/03 听力原文/.gitkeep
+!data-pack/04 听力音频/
+!data-pack/04 听力音频/.gitkeep
+!data-pack/05 词汇/
+!data-pack/05 词汇/.gitkeep
 .cache/
+audio-tracks.json
+
+# 素材兜底：就算放错位置也不入库
 *.pdf
+*.docx
 *.csv
 *.aac
 *.m4a
 *.mp3
-audio-tracks.json
+*.wav
 
 # 依赖与产物
 node_modules/
@@ -19,3 +37,6 @@ Thumbs.db
 .npmrc
 .env
 .env.*
+
+# 自己打包出来的题库快照（~/.dsh/... 之外的本地副本）
+packs/

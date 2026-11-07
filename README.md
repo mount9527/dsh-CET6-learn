@@ -5,7 +5,8 @@
 > **装完就能用**：包里带一份**完全原创的示例题库**（345 个自编核心词 + 1 套原创模拟卷，听力由系统语音朗读），
 > 打开就能背词、做题、交卷。示例**不是真题**，也不含任何真题文字、真题录音或真题答案。
 >
-> **真题要自己准备**：把自己合法取得的资料放进数据目录构建一次，示例会自动让位，版权归原权利人，请仅用于个人学习。
+> **真题要自己准备**：把自己合法取得的资料按分类放进项目里的 `data-pack/`（内容不进公开仓库）构建一次，
+> 示例会自动让位，版权归原权利人，请仅用于个人学习。
 >
 > **只给答案，不给解析**：客观题交卷后只标对错与正确选项；翻译、作文只提供作答区，不内置参考译文与范文。
 > 理由见 [为什么不提供解析](#为什么不提供解析)——答案册里没有的东西，程序不编。
@@ -105,16 +106,23 @@ CET6_DATA  →  ~/.dsh/dsh-cet6/data  →  插件内 data/（仅开发）  →  
 3. **按你填的路径拼出构建命令**，一键复制。这一步在自检通过（或只有“可选资料缺失”）之后才解锁；
    自检没通过时，它会告诉你还差哪一项。
 
+资料放哪都行；最省事的是放进本项目的 `data-pack/`——按 `01`–`05` 分好类之后，
+`npm run check:pack` 先体检、`npm run build:data` 直接构建，都不用再写 `--src`。
+目录长什么样、以后怎么加新卷 / 新录音 / 新词表，见 [`data-pack/README.md`](data-pack/README.md)。
+
 下面是把这三步写下来的版本。
 
 ### 题库放在哪
 
-默认 **`~/.dsh/dsh-cet6/data`**（Windows：`C:\Users\<你>\.dsh\dsh-cet6\data`）。
+分清两个目录：**资料目录**（你的 docx / mp3 / csv，源）与**题库目录**（构建产物 JSON）。
+资料默认放本项目的 `data-pack/`；题库默认写 **`~/.dsh/dsh-cet6/data`**
+（Windows：`C:\Users\<你>\.dsh\dsh-cet6\data`）。
 
-放在插件目录外是刻意的：插件实际安装在 `<profile>/node_modules/dsh-cet6/`，
+题库放在插件目录外是刻意的：插件实际安装在 `<profile>/node_modules/dsh-cet6/`，
 `npm update` 或重装会整目录替换，写在那里会连题库一起丢掉；往 `node_modules` 里写文件也不合规矩。
 
-想换位置就设环境变量 `CET6_DATA`（指向 data 目录本身），宿主与构建脚本都认它：
+想把资料放别处，构建时用 `--src` 指过去；想换题库位置就设环境变量 `CET6_DATA`（指向 data 目录本身），
+宿主与构建脚本都认它：
 
 ```bash
 CET6_DATA=D:/cet6-data npm run build:data -- --src "D:/CET-6"
@@ -136,9 +144,12 @@ CET6_DATA=D:/cet6-data npm run build:data -- --src "D:/CET-6"
 目录名前缀（`01`…`05`）是识别的依据，后面的名字随便改。然后：
 
 ```bash
-npm run build:data -- --src "D:/CET-6"   # 构建题库（默认写到 ~/.dsh/dsh-cet6/data）
-npm run build:data -- --src "..." --out ./data   # 想放到别处
-npm run check:data                       # 体检：答案数、选项、音轨是否齐全
+npm run check:pack                       # 先体检目录（几秒，不解析卷面）：谁缺答案、谁没原文、词表列名对不对
+npm run build:data                       # 构建题库：默认读 data-pack/，写到 ~/.dsh/dsh-cet6/data
+npm run build:data -- --src "D:/CET-6"   # 资料在别处时才带 --src
+npm run build:data -- --out ./data       # 想换产物位置
+npm run check:data                       # 体检产物：答案数、选项、音轨是否齐全
+npm run pack:data                        # 给构建好的题库打一份带清单的快照（本机备份用）
 ```
 
 **04/05 的编号不用管**：构建按内容认目录——有 `*.csv` 词表的是词汇目录，有音频文件的是音频目录，谁在前谁在后都行。
@@ -256,23 +267,32 @@ dsh-cet6/
     vocab-2500.json     345 个自编核心词
     papers/mock-01.json 1 套原创模拟卷（听力走语音合成）
     media.json          空音轨表
+  data-pack/            你自己资料的分类落点（内容被 .gitignore 挡住，只有骨架进 Git）
+    README.md           分类、命名规则、怎么加新内容
+    pack.json           资料包版本与来源记录（构建不读）
+    01 真题试卷/ … 05 词汇/  五个分类目录（各留一个 .gitkeep 占位）
+  docs/data-pack.md     数据包的完整规范
   build/
-    build.mjs           题库构建
-    validate-data.mjs   数据体检
+    build.mjs           题库构建（默认读 data-pack/）
+    check-pack.mjs      构建前体检：目录分类、别名、覆盖情况
+    validate-data.mjs   构建后体检：答案数 / 选项 / 音轨 / 统计口径
     check-starter.mjs   示例题库发版护栏（无音频 / kind / 词数自洽）
+    pack-data.mjs       给构建好的题库打带清单的快照
     serve-plugin.mjs    不开 DSH，单独跑一遍宿主路由
     e2e.mjs             无头浏览器回归
     test-client.mjs     客户端外壳静态检查
 ```
 
-你的题库、录音、分段表都不在上面的树里 —— 它们在 `~/.dsh/dsh-cet6/`。
+`data-pack/` 里你自己的资料与 `~/.dsh/dsh-cet6/` 里的构建产物都不在上面的发布物里。
 只有 `starter/` 随包走，因为它是原创内容，可以公开分发。
 
 ## 维护
 
 ```bash
-npm run build:data -- --src "D:/CET-6"   # 重抽 PDF/CSV 生成题库
+npm run check:pack                       # 资料目录体检（加新卷 / 新录音 / 新词表之后先跑它）
+npm run build:data                       # 重抽 docx 生成题库（默认读 data-pack/）
 npm run check:data                       # 数据体检
+npm run pack:data                        # 题库快照：~/.dsh/dsh-cet6/packs/<名>-<时间>.tgz + 清单
 npm run check:starter                    # 示例题库护栏（改动 starter/ 后跑）
 npm run preview:plugin                   # 起一个假宿主，浏览器开 http://127.0.0.1:8788/cet6/app/index.html
 CET6_DATA=./starter node build/serve-plugin.mjs 8790  # 另起一个用内置示例数据的实例（避开 8788）
@@ -314,27 +334,53 @@ npm run test:e2e                         # 无头浏览器跑一遍主要流程�
 
 ## 仓库与数据分仓
 
-这个仓库**只放代码、文档与原创示例**（`starter/`），不放任何真题、真题录音、答案或真题词表内容。数据请放在：
+仓库分成两块，边界写死在 `.gitignore` 里：
 
-- 本机资料目录（最简单），或
-- 一个**私有**仓库（例如 `mount9527/dsh-cet6-data`），克隆到 `~/.dsh/dsh-cet6/data-pack` 后构建。
+| 进 Git | 不进 Git |
+| --- | --- |
+| 代码、文档、构建脚本、原创示例 `starter/`、`data-pack/` 的**分类骨架**（README / `pack.json` / 各目录 `.gitkeep`） | `data-pack/` 里的 docx / pdf / mp3 / csv / txt，以及构建产物 `data/` |
 
-数据包的目录分类、命名规则、以后怎么加新卷/新音频/新词表，见
-[`docs/data-pack.md`](https://github.com/mount9527/dsh-CET6-learn/blob/main/docs/data-pack.md)。
+所以你的资料**就放在项目里的 `data-pack/`**，按 `01`–`05` 分好类，`npm run build:data` 直接读它；
+但 `git push` 与 `npm publish` 都不会带上它们——`.gitignore` 挡住提交，`package.json` 的 `files`
+白名单挡住发版。想核对可以随时跑：
 
-为什么不能把真题放进公开仓库：试题与录音的著作权归原权利人，公开仓库等于向公众提供复制件，
-不属于个人学习的合理使用。把仓库设成 Private 可以自由放数据；公开仓库只放代码最稳妥。
-本 README 也不放真题截图——演示图同样属于对试题内容的复制。
+```bash
+git status --short            # data-pack/ 里只有 README、pack.json 与 .gitkeep
+npm pack --dry-run            # 包内文件清单：没有 data/、没有 data-pack/ 的内容
+```
+
+**为什么内容不公开**：试题、听力原文、录音、词表的著作权归原权利人（考试主办机构与出版方），
+把它们放进公开仓库等于向公众提供复制件，不属于「个人学习研究」的合理使用；本 README 也就不放真题截图
+——演示图同样属于对试题内容的复制。仓库里能公开的，只有本项目自写的代码与 `starter/` 里的原创示例。
+
+想给资料做版本管理，两条路：
+
+- **本机为主**：`data-pack/` 就在项目里，`npm run pack:data` 给构建好的题库打一份带 sha256 的快照
+  （默认写到 `~/.dsh/dsh-cet6/packs/`）；
+- **私有仓**：把这个仓库设为 Private，或另开一个 `mount9527/dsh-cet6-data`，克隆到 `data-pack/` 后构建。
+  私有仓不受公开分发限制，但要记得它一旦转公开，资料就跟着公开了。
+
+分类、命名规则、以后怎么加新卷 / 新录音 / 新词表，见 [`data-pack/README.md`](data-pack/README.md)
+与 [`docs/data-pack.md`](docs/data-pack.md)。
 
 ## 发布
 
-- **npm**：`npm publish`（或打 `v*` tag 走 [.github/workflows/release.yml](https://github.com/mount9527/dsh-CET6-learn/blob/main/.github/workflows/release.yml)），
-  仓库 Secrets 里需要 `NPM_TOKEN`。包内容由 `package.json` 的 `files` 白名单决定，
-  只有代码、内置示例（`starter/`）与文档；`data/`、`data-pack/`、`.cache/` 都不会进包。
-- **插件市场**：用同一版本号发布 npm 后，在市场上提交包名 `dsh-cet6` 即可（入口以市场说明为准）。
-  市场条目文案按「内置原创示例 + 可导入自备真题」写，不要写成「提供真题」。
-- **GitHub**：代码仓公开；**数据不要推到公开仓库**（见上一节）。要给数据做版本管理就开一个私有仓。
-- 发布物与 README 都不放真题截图，原因同上；示例内容的截图可以放。
+三处发布，各自独立：
+
+- **GitHub**：代码仓公开，`main` 分支。推代码前先跑一遍
+  `npm run test:client && npm run check:starter`（不依赖题库，CI 里也只跑这两步）。
+- **npm**：`npm publish`（或打 `v*` tag 走 [.github/workflows/release.yml](.github/workflows/release.yml)，
+  仓库 Secrets 里放 `NPM_TOKEN`）。包内容由 `package.json` 的 `files` 白名单决定：只有代码、
+  内置示例（`starter/`）与文档，`data/`、`data-pack/`、`.cache/` 都不会进包。
+  发版前用 `npm pack --dry-run` 自己看一眼清单。
+- **插件市场**：[awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
+  是 dsh 插件市场的目录源，上架方式是去那个仓库提 PR（**不是**往 market 仓库提，也不是往某个后台传包）。
+  硬性条件：`package.json` 里有 `dsh.bundle`、仓库创建满 1 天、仓库 topics 带 `dsh-plugin`。
+  条目放在 `data/plugins/mount9527__dsh-cet6.yml`，文案按「内置原创示例 + 可导入自备真题」写，
+  不要写成「提供真题」。合并后站点与市场通常一天内自动收录。
+
+发布物、README 与市场条目都**不放图片演示**（截图会变成对试题内容的复制；示例页的图也能省则省）。
+功能用文字说清楚就够了。
 
 ## 许可
 

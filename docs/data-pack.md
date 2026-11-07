@@ -1,7 +1,8 @@
 # 数据包组织规范（dsh-CET6-learn）
 
 > 这份文档只描述**目录与文件约定**，不包含任何题目、录音或词表内容。
-> 真实的题库请放在**私有仓库**或本机资料目录里；公开仓库只放代码与本文档。
+> 真实的题库放在本机项目里的 `data-pack/`（内容被 `.gitignore` 挡住），或一个私有仓库；
+> 公开仓库只放代码、本文档与 `data-pack/` 的分类骨架。
 
 > **先分清两种数据**：随包分发的 `starter/` 是**原创示例题库**（不碰真题，可公开分发，见 `NOTICE.md` 第 3 节），
 > 它不是本文说的「数据包」；本文讲的是使用者自备真题的目录约定。两者结构相同，所以同一套构建产物格式通吃。
@@ -12,16 +13,31 @@ CET-6 的试题、听力录音、答案与词汇释义的著作权归原权利�
 把真题 PDF、听力音频或成规模的答案/释义放进公开仓库，等于向公众提供复制件，
 不属于「个人学习研究」的合理使用。因此：
 
-- **公开仓库（本仓库）**：只放代码、文档、目录模板。
-- **数据包**：放在私有仓库或本机目录，例如 `~/.dsh/dsh-cet6/data-pack/`；
-  构建时用 `--src` 指过去，产物默认写到 `~/.dsh/dsh-cet6/data/`。
+- **公开仓库（本仓库）**：代码、文档、`starter/` 原创示例，以及 `data-pack/` 的分类骨架
+  （`README.md` / `pack.json` / 各目录 `.gitkeep`）。骨架进 Git，内容不进。
+- **数据内容**：放在本机项目的 `data-pack/` 下——目录在仓库里，文件被 `.gitignore` 挡住；
+  构建时默认就读它，产物默认写到 `~/.dsh/dsh-cet6/data/`。
 - 如果确实想把数据也放到 GitHub：请把仓库设为 **Private**，或另开一个私有数据仓，
   不要把数据推到公开仓库。
 
+`.gitignore` 的规则形状是「先整目录忽略，再把骨架文件捞回来」：
+
+```
+data-pack/**
+!data-pack/README.md
+!data-pack/pack.json
+!data-pack/01 真题试卷/
+!data-pack/01 真题试卷/.gitkeep
+…（五个分类目录各一条）
+```
+
+改完 `.gitignore` 用 `git status --short` 核对：`data-pack/` 下应当只出现 README、`pack.json` 与 `.gitkeep`。
+
 ## 2. 数据包根目录（按题型分类）
 
-构建脚本按**内容**识别 `04` / `05`（六级资料里词汇常排在音频后面，与四级相反，
-所以不看编号）：目录里有 `*.csv` 且文件名含「词」即判为词汇目录，有音频文件即判为音频目录。
+数据包的根目录就是项目里的 **`data-pack/`**（仓库里已有骨架）。构建脚本按**内容**识别 `04` / `05`
+（六级资料里词汇常排在音频后面，与四级相反，所以不看编号）：目录里有 `*.csv` 且文件名含「词」即判为词汇目录，
+有音频文件即判为音频目录。
 
 ```
 data-pack/
@@ -55,7 +71,8 @@ data-pack/
 3. 有听力原文就放 `03 听力原文/`，有录音就放 `04 听力音频/`（文件名带上考期与套号）；
 4. 若这套的听力标了「本部分与第 N 套共用」，构建会按标注记 `listenFrom` 借用同考期录音，
    可跨考期借（实测 `2024-12-s3` 借 `2024-12-s2`）；
-5. `npm run build:data -- --src <数据包路径>`，再 `npm run check:data` 确认 `problems` 为空。
+5. `npm run check:pack`（几秒，只看目录与文件名，先把「放错位置 / 起错名字」挡下来）；
+6. `npm run build:data`，再 `npm run check:data` 确认 `problems` 为空。
 
 ### 加一份新录音
 
@@ -99,20 +116,39 @@ data-pack/
 
 ## 5. 私有仓库的推荐做法
 
+项目里的 `data-pack/` 已经被 `.gitignore` 挡住，所以直接往本仓库提交是提交不上去的。
+要给数据做版本管理，两条路：
+
+**A. 本机快照**（最轻，不用任何远端）：
+
+```bash
+npm run pack:data                 # → ~/.dsh/dsh-cet6/packs/cet6-<时间>.tgz + 同名 .json 清单（含 sha256）
+npm run pack:data -- --name 2023-2026 --out D:/备份
+```
+
+快照只含构建产物 JSON（约 1 MB，压缩后），不含录音；`media.json` 记着录音在资料目录里的相对路径，
+换机器时把 `data-pack/`（或最小是其中的录音）一起带走即可。
+
+**B. 独立私有仓**：
+
 ```bash
 # 数据包单独一个私有仓库（GitHub → New repository → Private）
+cd data-pack
 git init
-git add .
+git add -f .
 git commit -m "data: CET-6 2023-2026 pack"
 git remote add origin git@github.com:mount9527/dsh-cet6-data.git
 git push -u origin main
 ```
 
+注意 `git add -f`：`data-pack/` 的内容在本仓库是被忽略的，独立成仓后要么用 `-f`，
+要么在新仓里换一份不忽略内容的 `.gitignore`。
+
 在每台机器上：
 
 ```bash
-git clone <私有数据仓> ~/.dsh/dsh-cet6/data-pack
-npm run build:data -- --src ~/.dsh/dsh-cet6/data-pack
+git clone <私有数据仓> data-pack      # 或者 clone 到别处，构建时用 --src 指过去
+npm run build:data
 ```
 
 升级插件（`npm update dsh-cet6`）不会影响 `~/.dsh/dsh-cet6/`，题库与音频都还在。
@@ -120,7 +156,8 @@ npm run build:data -- --src ~/.dsh/dsh-cet6/data-pack
 ## 6. 校验
 
 ```bash
-npm run check:data      # 真题题库
+npm run check:pack      # 资料目录体检：分类、别名、答案/原文/录音覆盖、词表列名
+npm run check:data      # 构建产物体检
 npm run check:starter   # 内置示例题库（无音频、kind=starter、词数自洽）
 ```
 

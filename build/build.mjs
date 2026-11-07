@@ -1,7 +1,7 @@
-﻿/**
+/**
  * CET-6 题库构建脚本
  * ---------------------------------------------------------------------------
- * 输入 = 使用者自己准备的资料目录（--src 指定，默认 ./CET-6）：
+ * 输入 = 使用者自己准备的资料目录（默认读项目里的 data-pack/，可用 --src 指定别处）：
  *   01 真题试卷（2023.6 - 2026.6）/<年>年<月>月/第N套/*（整卷）.docx 或 *.pdf
  *   02 答案（客观题）/YYYY年M月第N套_答案.txt（兼容 *.csv 答案总表）
  *   03 听力原文（录音转写）/YYYY年M月第N套_听力原文.txt
@@ -53,8 +53,18 @@ const argTracks = (() => {
   return i > -1 ? process.argv[i + 1] : ''
 })()
 
-/** 资料目录：--src > CET6_SRC > 当前目录下的 CET-6（都没有就报错，不再猜作者的机器路径） */
-const SRC = path.resolve(argSrc || process.env.CET6_SRC || path.join(process.cwd(), 'CET-6'))
+/** 资料目录：--src > CET6_SRC > 项目里的 data-pack/ > 当前目录下的 CET-6 */
+function defaultSrc() {
+  const pack = path.join(ROOT, 'data-pack')
+  try {
+    // 只认「里面有 01 开头目录」的 data-pack/，空骨架不算，免得报错信息跑偏
+    if (fs.readdirSync(pack).some((n) => /^01/.test(n))) return pack
+  } catch {
+    /* 没有 data-pack/，继续看 CET-6 */
+  }
+  return path.join(process.cwd(), 'CET-6')
+}
+const SRC = path.resolve(argSrc || process.env.CET6_SRC || defaultSrc())
 const OUT = argOut ? path.resolve(argOut) : defaultDataDir()
 const CACHE = path.join(cacheDir(), 'extract')
 const FORCE = process.argv.includes('--force') || process.argv.includes('-f')
