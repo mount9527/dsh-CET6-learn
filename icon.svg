@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="CET-6 训练台">
   <rect width="64" height="64" rx="14" fill="#2f6df6"/>
-  <rect x="13" y="11" width="38" height="42" rx="6" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="2.4"/>
-  <path d="M39 19 25 37h16" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M39 19v18" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round"/>
+  <circle cx="32" cy="41.5" r="10" fill="none" stroke="#ffffff" stroke-width="3.2"/>
+  <path d="M24.9 34.4C25.6 27 31 20.5 42.5 17.6" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round"/>
 </svg>

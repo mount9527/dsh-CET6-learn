@@ -17,18 +17,19 @@
       const list = size ? all.filter((w) => (w.lib || 6500) === size) : all;
 
       const items = list
-        .map(
-          (x) => `
+        .map((x) => {
+          const ph = CET6.util.cleanPh(x.ph);
+          return `
         <div class="nb-item">
           <div class="w">${esc(x.w)}</div>
-          <div class="pill">${x.ph ? '/' + esc(x.ph) + '/' : ''} 错 ${x.times} 次</div>
+          <div class="pill">${esc(ph) ? '/' + esc(ph) + '/' : ''} 错 ${x.times} 次</div>
           <div class="d">${esc(x.def)}</div>
           <div class="foot">
             <button class="btn btn-ghost btn-sm" data-say="${esc(x.w)}">🔊</button>
             <button class="btn btn-ghost btn-sm" data-del="${esc(x.w)}">移出</button>
           </div>
-        </div>`
-        )
+        </div>`;
+        })
         .join('');
 
       CET6.UI.set(`

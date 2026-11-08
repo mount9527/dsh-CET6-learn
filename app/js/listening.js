@@ -89,7 +89,7 @@
             }
             ${
               stat.borrowed
-                ? `其中 ${stat.borrowed} 套的听力与同考期其他套共用（卷面注明「本部分与…共用」），录音沿用那一套。`
+                ? `其中 ${stat.borrowed} 套的听力与同考期其他套共用（卷面注明「本部分与…共用」），录音与原文也用同一份。`
                 : ''
             }
             ${stat.assumed ? `另有 ${stat.assumed} 套缺听力原文，录音归属按文件名推定，标了「按套号推定」，建议先听一遍确认。` : ''}
@@ -268,7 +268,7 @@
             ${
               ls.copiedFrom
                 ? CET6.UI.note(
-                    `本套听力与同考期第 ${Number(String(ls.copiedFrom).split('-s')[1]) || 1} 套共用（卷面注明），录音与原文沿用那一套。`,
+                    `本套听力与同考期第 ${Number(String(ls.copiedFrom).split('-s')[1]) || 1} 套共用（卷面注明），录音与原文同那一套。`,
                     'info'
                   )
                 : ''

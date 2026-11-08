@@ -289,6 +289,17 @@
     esc(s) {
       return String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     },
+    /**
+     * 音标清洗：词表里有的把音标写成 /bɪˈhevjə/，有的写成 bɪˈhevjə。
+     * 渲染时统一只加一层斜杠，避免出现 //...// 。
+     * 旧数据、导入的生词本条目、各版本词表都走这里，所以不必重刷题库。
+     */
+    cleanPh(ph) {
+      return String(ph == null ? '' : ph)
+        .trim()
+        .replace(/^\/+|\/+$/g, '')
+        .trim();
+    },
     shuffle(arr) {
       const a = arr.slice();
       for (let i = a.length - 1; i > 0; i--) {

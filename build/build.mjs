@@ -110,6 +110,8 @@ const answerRecord = (a) => ({
 const CJK = /[\u3400-\u9fff\uff00-\uffef\u3000-\u303f]/
 const hasCJK = (s) => CJK.test(s)
 const squash = (s) => String(s || '').replace(/\s+/g, ' ').trim()
+/** 音标归一：词表里有的写成 /bɪˈhevjə/，有的不带斜杠；统一剥掉，前端只加一层 */
+const cleanPh = (s) => String(s || '').replace(/^\/+|\/+$/g, '').trim()
 const pad2 = (n) => String(n).padStart(2, '0')
 
 /* ────────────────────────── 音频时长 ────────────────────────── */
@@ -818,7 +820,7 @@ function parseVocabCsv(file, label) {
     list.push({
       id: Number(squash(r[iId] ?? '')) || list.length + 1,
       w,
-      ph: squash(r[iPh] ?? ''),
+      ph: cleanPh(squash(r[iPh] ?? '')),
       stars,
       def: def || '（原表未给释义）',
       pos: posOf(def),

@@ -113,6 +113,7 @@
 
       const render = () => {
         const word = words[pos];
+        const ph = CET6.util.cleanPh(word.ph);
         const mode = lib.mode || 'recall';
         const p = CET6.Store.progressOf(list, unitNo);
         const starred = CET6.Store.notebookHas(word.w);
@@ -126,7 +127,7 @@
         if (mode === 'recall') {
           body = `
             <div class="word-big" id="word-toggle" title="点一下显示释义">${esc(word.w)}</div>
-            ${word.ph ? `<div class="word-ph">/${esc(word.ph)}/</div>` : ''}
+            ${ph ? `<div class="word-ph">/${esc(ph)}/</div>` : ''}
             <div class="stars" title="考频星级：★ 越多越常考">${'★'.repeat(word.stars || 0) || '<span class="muted">—</span>'}</div>
             <div class="reveal" id="word-reveal" hidden>
               <div class="def">${esc(word.def)}</div>
@@ -136,7 +137,7 @@
         } else if (mode === 'read') {
           body = `
             <div class="word-big" id="word-toggle" title="点一下朗读">${esc(word.w)}</div>
-            ${word.ph ? `<div class="word-ph">/${esc(word.ph)}/</div>` : ''}
+            ${ph ? `<div class="word-ph">/${esc(ph)}/</div>` : ''}
             <div class="stars" title="考频星级：★ 越多越常考">${'★'.repeat(word.stars || 0) || '<span class="muted">—</span>'}</div>
             <div class="reveal">
               <div class="def">${esc(word.def)}</div>
@@ -312,6 +313,7 @@
       let mode = startMode;
       const render = () => {
         const word = words[pos];
+        const ph = CET6.util.cleanPh(word.ph);
         const seg = MODES.map(
           (m) => `<button data-mode="${m.key}" class="${mode === m.key ? 'on' : ''}" title="${m.desc}">${m.label}</button>`
         ).join('');
@@ -328,7 +330,7 @@
         } else {
           body = `
             <div class="word-big" id="word-toggle">${esc(word.w)}</div>
-            ${word.ph ? `<div class="word-ph">/${esc(word.ph)}/</div>` : ''}
+            ${ph ? `<div class="word-ph">/${esc(ph)}/</div>` : ''}
             <div class="reveal" ${mode === 'recall' ? 'hidden id="word-reveal"' : ''}>
               <div class="def">${esc(word.def)}</div>
               ${word.ex ? `<div class="ex">${esc(word.ex)}${word.exCn ? `<span class="ex-cn">${esc(word.exCn)}</span>` : ''}</div>` : '<div class="ex-missing">这个词表没收录例句</div>'}
